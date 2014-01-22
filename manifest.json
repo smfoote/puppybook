@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "puppybook",
+  "description": "Replace all the pictures on facebook with pictures of puppies, kittens, or yourself",
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "matches": ["*://www.facebook.com/*"],
+      "js": ["puppybook.js"]
+    }
+  ]
+}
