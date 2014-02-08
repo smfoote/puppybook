@@ -1,4 +1,4 @@
 var userName = prompt('Hello, what\'s your name?');
-document.body.innerHTML = '&lt;h1&gt;Hello, ' + userName + '!&lt;/h1&gt;' +
-                          '&lt;p&gt;' + projectName + ' ' + versionNumber +
-                          ' viewed on: ' + currentTime + '&lt;/p&gt;';
+document.body.innerHTML = '<h1>Hello, ' + userName + '!</h1>' +
+                          '<p>' + pbValues.projectName + ' ' + pbValues.versionNumber +
+                          ' viewed on: ' + pbValues.currentTime + '</p>';
