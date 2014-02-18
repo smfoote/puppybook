@@ -18,6 +18,8 @@ var currentTime = currentDate.getFullYear() + '-' +  // Set year
 pbValues.currentTime = currentTime;
 
 var userName = prompt('Hello, what\'s your name?');
-document.body.innerHTML = '<h1>Hello, ' + userName + '!</h1>' +
+/*document.body.innerHTML = '<h1>Hello, ' + userName + '!</h1>' +
                           '<p>' + pbValues.projectName + ' ' + pbValues.versionNumber +
                           ' viewed on: ' + pbValues.currentTime + '</p>';
+*/
+var images = document.querySelectorAll('div.userContentWrapper img');
