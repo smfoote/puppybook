@@ -1,6 +1,13 @@
 var pbValues = {
   projectName: 'puppybook',
-  versionNumber: '0.0.1'
+  versionNumber: '0.0.1',
+  areaCodes: {
+    '408': 'Silicon Valley',
+    '702': 'Las Vegas',
+    '801': 'Utah',
+    '765': 'West Lafayette',
+    '901': 'Memphis'
+  }
 };
 var currentDate = new Date();   // Create Date object. More about objects and
                                 // Date objects in chapter 5. This object will
