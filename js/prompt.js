@@ -2,7 +2,7 @@
 var userName = prompt('Hello, what\'s your name?');
 
 if (!userName) {
-  prompt('You didn\'t enter a name. Really, what\'s your name?');
+  userName = prompt('You didn\'t enter a name. Really, what\'s your name?');
 }
 
 // Get the user's phone number.
@@ -38,4 +38,4 @@ if (phoneMatches) {
 }
 
 // Insert the output into the web page.
-document.body.innerHTML = output;
+// document.body.innerHTML = output;
