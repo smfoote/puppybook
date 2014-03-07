@@ -9,6 +9,11 @@ var pbValues = {
     '901': 'Memphis'
   }
 };
+
+function getAreaCodes() {
+  return pbValues.areaCodes;
+}
+
 var currentDate = new Date();   // Create Date object. More about objects and
                                 // Date objects in chapter 5. This object will
                                 // be used to build our date.

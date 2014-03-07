@@ -1,5 +1,8 @@
-var images = document.querySelectorAll('div.userContentWrapper img');
+function getImages() {
+  var images = document.querySelectorAll('div.userContentWrapper img');
+  return images;
+}
 
-for (var i = 0, len = images.length; i < len; i++) {
-  console.log(images[i].src);
+function replaceImages(images, location) {
+
 }
