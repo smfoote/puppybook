@@ -17,6 +17,10 @@ function getPhoneNumber(userName) {
   return phoneNumber;
 }
 
+function validatePhoneNumber(phoneNumber) {
+  return phoneNumber.match(/(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/);
+}
+
 function getLocation(phoneNumber) {
   // Create the phone number pattern.
   var phoneNumberPattern = /(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/;
