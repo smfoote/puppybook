@@ -14,19 +14,84 @@ function getAreaCodes() {
   return pbValues.areaCodes;
 }
 
-var currentDate = new Date();   // Create Date object. More about objects and
-                                // Date objects in chapter 5. This object will
-                                // be used to build our date.
+// Get the user's name.
+function getUserName() {
+  var userName = prompt('Hello, what\'s your name?');
 
-    // currentTime will look like '2014-01-25 at 14:45:12'
-var currentTime = currentDate.getFullYear() + '-' +  // Set year
-                  currentDate.getMonth() + '-' +     // Set month
-                  currentDate.getDate() + ' at ' +   // Set day of the month
-                  currentDate.getHours() + ':' +     // Set hours (military time)
-                  currentDate.getMinutes() + ':' +   // Set minutes
-                  currentDate.getSeconds();          // Set seconds
+  if (!userName) {
+    userName = prompt('You didn\'t enter a name. Really, what\'s your name?');
+  }
+  return userName;
+}
 
-// Add currentTime to the pbValues object
-pbValues.currentTime = currentTime;
+function validatePhoneNumber(phoneNumber) {
+  return phoneNumber.match(/(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/);
+}
+
+// Get the user's phone number.
+function getPhoneNumber(userName) {
+  var phoneNumber = prompt('Hello ' + userName +', what\'s your phone number?');
+  if (!validatePhoneNumber(phoneNumber)) {
+    phoneNumber = prompt('Please enter a valid phone number.');
+  }
+  return phoneNumber;
+}
+
+function getLocation(phoneNumber) {
+  // Create the phone number pattern.
+  var phoneNumberPattern = /(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/;
+  // Get matches from phoneNumber
+  var phoneMatches = phoneNumberPattern.exec(phoneNumber);
+  var areaCodes, areaCode, locationName;
+  if (phoneMatches) {
+    areaCode = phoneMatches[1];
+    areaCodes = getAreaCodes();
+    locationName = areaCodes[areaCode];
+  }
+  return locationName ? locationName : 'somewhere';
+}
+
+function getImages() {
+  var images = document.querySelectorAll('div.userContentWrapper img');
+  return images;
+}
+function getImageHeight(image) {
+  return image.height;
+}
+
+function getImageWidth(image) {
+  return image.width;
+}
+
+function replaceImages(images, location) {
+  var baseImageUrl, height, width, image;
+  switch (location) {
+  case 'Memphis':
+    // Use puppies for Memphis
+    baseImageUrl = 'http://placepuppy.it/';
+    break;
+  default:
+    // use kittens everywhere else
+    baseImageUrl = 'http://placekitten.com/';
+    break;
+  }
+  for (var i=0,len=images.length; i<len; i++) {
+    image = images[i];
+    height = getImageHeight(image);
+    width = getImageWidth(image);
+    image.src = baseImageUrl + width + '/' + height;
+  }
+}
+
+function main() {
+  var userName = getUserName();
+  var phoneNumber = getPhoneNumber(userName);
+  var location = getLocation(phoneNumber);
+  var images = getImages();
+  setInterval(function() {
+    images = getImages();
+    replaceImages(images, location);
+  }, 3000);
+}
 
 main();

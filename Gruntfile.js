@@ -2,8 +2,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
     concat: {
       release: {
-        src: ['js/values.js', 'prompt.js', 'getImages.js',
-              'replaceImages.js', 'main.js'],
+        src: ['js/values.js', 'js/prompt.js', 'js/getImages.js',
+              'js/replaceImages.js', 'js/main.js'],
         dest: 'release/main.js'
       }
     },
@@ -14,10 +14,13 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['js/*.js']
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      files: ['release/main.js']
     },
     watch: {
-      files: ['<%= jshint.files %>', 'manifest.json'],
+      files: ['js/*.js', 'manifest.json'],
       tasks: ['default']
     }
   });
@@ -29,5 +32,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Register tasks
-  grunt.registerTask('default', ['jshint', 'concat', 'copy']);
+  grunt.registerTask('default', ['concat', 'jshint', 'copy']);
 };
