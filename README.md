@@ -1,4 +1,4 @@
 puppybook
 =========
 
-Make the Facebook new feed cuter with puppies or kittens
+Make the Facebook news feed cuter with puppies or kittens
