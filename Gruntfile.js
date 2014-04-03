@@ -25,6 +25,12 @@ module.exports = function(grunt) {
         dest: 'doc'
       }
     },
+    jasmine: {
+      src: 'js/*.js',
+      options: {
+        specs: 'test/*.js',
+      }
+    },
     watch: {
       files: ['js/*.js', 'manifest.json'],
       tasks: ['default']
@@ -36,6 +42,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-jsdoc');
 
   // Register tasks
