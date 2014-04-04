@@ -26,11 +26,16 @@ module.exports = function(grunt) {
       }
     },
     jasmine: {
-      test: {
+      coverage: {
         src: ['js/values.js', 'js/prompt.js', 'js/getImages.js',
               'js/replaceImages.js', 'js/main.js'],
         options: {
           specs: 'test/*.js',
+          template: require('grunt-template-jasmine-istanbul'),
+          templateOptions: {
+            coverage: 'tmp/coverage.json',
+            report: 'tmp/coverage'
+          }
         }
       }
     },
@@ -46,6 +51,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-template-jasmine-istanbul');
   grunt.loadNpmTasks('grunt-jsdoc');
 
   // Register tasks
