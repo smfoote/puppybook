@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Index</title>
+    <title>JSDoc: Source: getImages.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,30 +17,26 @@
 
 <div id="main">
     
-    <h1 class="page-title">Index</h1>
+    <h1 class="page-title">Source: getImages.js</h1>
     
     
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>/**
+ * Get the images in the Facebook news feed
+ * @method
+ * @return {array} An array-like collection of HTML elements
+ */
+function getImages() {
+  var images = document.querySelectorAll('div.userContentWrapper img');
+  return images;
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

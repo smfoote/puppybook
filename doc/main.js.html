@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Index</title>
+    <title>JSDoc: Source: main.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,30 +17,34 @@
 
 <div id="main">
     
-    <h1 class="page-title">Index</h1>
+    <h1 class="page-title">Source: main.js</h1>
     
     
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>/**
+ * The main method is used to start the program
+ * @method
+ */
+function main() {
+  var userName = getUserName();
+  var phoneNumber = getPhoneNumber(userName);
+  var location = getLocation(phoneNumber);
+  var images = getImages();
+  replaceImages(images, location);
+  setInterval(function() {
+    images = getImages();
+    replaceImages(images, location);
+  }, 3000);
+}
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+main();
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -1,3 +1,7 @@
+/**
+ * The main method is used to start the program
+ * @method
+ */
 function main() {
   var userName = getUserName();
   var phoneNumber = getPhoneNumber(userName);

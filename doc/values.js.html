@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Index</title>
+    <title>JSDoc: Source: values.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,30 +17,37 @@
 
 <div id="main">
     
-    <h1 class="page-title">Index</h1>
+    <h1 class="page-title">Source: values.js</h1>
     
     
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>var pbValues = {
+  projectName: 'puppybook',
+  versionNumber: '0.0.1',
+  areaCodes: {
+    '408': 'Silicon Valley',
+    '702': 'Las Vegas',
+    '801': 'Utah',
+    '765': 'West Lafayette',
+    '901': 'Memphis'
+  }
+};
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+/**
+ * Get the area codes defined in pbValues
+ * @method
+ * @return {object}
+ */
+function getAreaCodes() {
+  return pbValues.areaCodes;
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

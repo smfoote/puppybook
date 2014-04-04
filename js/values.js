@@ -10,6 +10,11 @@ var pbValues = {
   }
 };
 
+/**
+ * Get the area codes defined in pbValues
+ * @method
+ * @return {object}
+ */
 function getAreaCodes() {
   return pbValues.areaCodes;
 }
