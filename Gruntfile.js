@@ -26,9 +26,12 @@ module.exports = function(grunt) {
       }
     },
     jasmine: {
-      src: 'js/*.js',
-      options: {
-        specs: 'test/*.js',
+      test: {
+        src: ['js/values.js', 'js/prompt.js', 'js/getImages.js',
+              'js/replaceImages.js', 'js/main.js'],
+        options: {
+          specs: 'test/*.js',
+        }
       }
     },
     watch: {

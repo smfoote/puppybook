@@ -19,10 +19,15 @@ function getUserName() {
  * @return {boolean}
  */
 function validatePhoneNumber(phoneNumber) {
-  return /(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/.test(phoneNumber);
+  return /(?:1-)?\(?(\d{3})(?:-|\) ?)\d{3}-\d{4}/.test(phoneNumber);
 }
 
-// Get the user's phone number.
+/**
+ * Ask the user for their phone number. Twice if necessary.
+ * @method
+ * @param {string} userName The user's name, so we can ask the user by name
+ * @return {string}
+ */
 function getPhoneNumber(userName) {
   var phoneNumber = prompt('Hello ' + userName +', what\'s your phone number?');
   if (!validatePhoneNumber(phoneNumber)) {
@@ -31,6 +36,14 @@ function getPhoneNumber(userName) {
   return phoneNumber;
 }
 
+/**
+ * Return a geographic location (in the form of a string),
+ * based on a phone number
+ * @method
+ * @param {string} phoneNumber The phone number to be used to get the location.
+ * It is assumed that this phone number has already been validated.
+ * @return {string} The geographic location of the phone number's area code
+ */
 function getLocation(phoneNumber) {
   // Create the phone number pattern.
   var phoneNumberPattern = /(?:1-)?\(?(\d{3})[\-\)]\d{3}-\d{4}/;
