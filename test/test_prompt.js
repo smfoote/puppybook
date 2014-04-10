@@ -12,41 +12,41 @@ describe('prompt.js', function() {
   describe('validatePhoneNumber', function() {
     it('should return a boolean', function() {
       var result = validatePhoneNumber('23456');
-      expect(typeof result).toEqual('boolean');
+      expect(typeof result).toBe('boolean');
     });
 
     it('should return false for alphanumeric strings', function() {
       var result = validatePhoneNumber('No way!');
-      expect(result).toEqual(false);
+      expect(result).toBe(false);
     });
 
     it('should return false for poorly formatted 10 digit numbers', function() {
       var result = validatePhoneNumber('702-5555432');
-      expect(result).toEqual(false);
+      expect(result).toBe(false);
     });
 
     it('should return true for parentheses around area codes', function() {
       var result = validatePhoneNumber('(702)555-4321');
-      expect(result).toEqual(true);
+      expect(result).toBe(true);
     });
 
     it('should return true for parentheses around area codes with a space', function() {
       var result = validatePhoneNumber('(702) 555-4321');
-      expect(result).toEqual(true);
+      expect(result).toBe(true);
     });
 
     it('should return true when separated by dashes', function() {
       var result = validatePhoneNumber('702-555-4321');
-      expect(result).toEqual(true);
+      expect(result).toBe(true);
     });
 
     it('should return true with a preceding "1-"', function() {
       var result = validatePhoneNumber('1-(702) 555-4321');
-      expect(result).toEqual(true);
+      expect(result).toBe(true);
       result = validatePhoneNumber('1-(702)555-4321');
-      expect(result).toEqual(true);
+      expect(result).toBe(true);
       result = validatePhoneNumber('1-702-555-4321');
-      expect(result).toEqual(true);
+      expect(result).toBe(true);
     });
   });
 
