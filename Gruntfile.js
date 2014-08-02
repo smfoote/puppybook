@@ -27,8 +27,7 @@ module.exports = function(grunt) {
     },
     jasmine: {
       coverage: {
-        src: ['js/values.js', 'js/prompt.js', 'js/getImages.js',
-              'js/replaceImages.js', 'js/main.js'],
+        src: ['<%= concat.release.src %>'],
         options: {
           specs: 'test/*.js',
           template: require('grunt-template-jasmine-istanbul'),
